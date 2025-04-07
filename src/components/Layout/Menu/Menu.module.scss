@@ -1,0 +1,67 @@
+.menu {
+  width: 48px;
+  height: 100vh;
+  background: #3b3b3b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 6px;
+  box-sizing: border-box;
+}
+
+.topBlock,
+.bottomBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+button {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.buttonsBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.iconButton {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
