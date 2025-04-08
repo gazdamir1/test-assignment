@@ -1,6 +1,9 @@
 Так как в Figma макет 1440p, проект сделан именно под это разрешение.
 
 Для запуска:
-npm i
-npm run dev
-переход по "http://localhost:5174/"
+<p>npm i</p>
+<p>npm run dev</p>
+<p>переход по "http://localhost:5174/"</p>
+
+
+
