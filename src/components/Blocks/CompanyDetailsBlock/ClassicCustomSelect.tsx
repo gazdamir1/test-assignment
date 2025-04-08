@@ -1,17 +1,17 @@
 import { useState, useRef, useEffect } from "react"
 import styles from "./CompanyDetailsBlock.module.scss"
 
-interface CustomSelectProps {
+interface ClassicSelectProps {
   options: string[]
-  selectedOptions: string[]
-  onSelectionChange: (selected: string[]) => void
+  selectedOption: string
+  onSelect: (selected: string) => void
 }
 
-export const CustomSelectWithCheckboxes = ({
+export const ClassicCustomSelect = ({
   options,
-  selectedOptions,
-  onSelectionChange,
-}: CustomSelectProps) => {
+  selectedOption,
+  onSelect,
+}: ClassicSelectProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const selectRef = useRef<HTMLDivElement>(null)
 
@@ -31,13 +31,6 @@ export const CustomSelectWithCheckboxes = ({
     }
   }, [])
 
-  const toggleOption = (option: string) => {
-    const newSelected = selectedOptions.includes(option)
-      ? selectedOptions.filter((item) => item !== option)
-      : [...selectedOptions, option]
-    onSelectionChange(newSelected)
-  }
-
   return (
     <div className={styles.customSelectContainer} ref={selectRef}>
       <div
@@ -45,21 +38,26 @@ export const CustomSelectWithCheckboxes = ({
         onClick={() => setIsOpen(!isOpen)}
         tabIndex={0}
       >
-        {selectedOptions.length > 0
-          ? selectedOptions.join(", ")
-          : "Select options..."}
+        {selectedOption || "Select an option..."}
+        <span
+          className={`${styles.selectArrow} ${isOpen ? styles.rotated : ""}`}
+        />
       </div>
       {isOpen && (
         <div className={styles.customSelectDropdown}>
           {options.map((option) => (
-            <label key={option} className={styles.customSelectOption}>
-              <input
-                type="checkbox"
-                checked={selectedOptions.includes(option)}
-                onChange={() => toggleOption(option)}
-              />
+            <div
+              key={option}
+              className={`${styles.customSelectOptionClassic} ${
+                selectedOption === option ? styles.selected : ""
+              }`}
+              onClick={() => {
+                onSelect(option)
+                setIsOpen(false)
+              }}
+            >
               {option}
-            </label>
+            </div>
           ))}
         </div>
       )}

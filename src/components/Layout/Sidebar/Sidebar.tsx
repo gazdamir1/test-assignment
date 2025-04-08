@@ -1,5 +1,5 @@
 import styles from "./Sidebar.module.scss"
-import iconCompany from "../../../assets/icons/icon-company-black.svg"
+import iconCompany from "../../../assets/icons/icon-company.svg"
 import iconContractor from "../../../assets/icons/icon-contractor.svg"
 import iconAccount from "../../../assets/icons/icon-account.svg"
 
@@ -14,7 +14,7 @@ const Sidebar = () => {
       <div className={styles.divider} />
 
       <div className={styles.bottomBlock}>
-        <button className={styles.sidebarButton}>
+        <button className={styles.sidebarButtonOrganizations}>
           <img src={iconCompany} alt="Company" className={styles.buttonIcon} />
           <p>Organizations</p>
         </button>

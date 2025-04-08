@@ -3,6 +3,7 @@ import iconPencil from "../../../assets/icons/icon-pencil.svg"
 import firstPhoto from "../../../assets/photos/FirstPhoto.png"
 import secondPhoto from "../../../assets/photos/SecondPhoto.png"
 import thirdPhoto from "../../../assets/photos/ThirdPhoto.png"
+import imgDelete from "../../../assets/icons/icon-img-delete.svg"
 
 export const PhotosBlock = () => {
   return (
@@ -16,13 +17,32 @@ export const PhotosBlock = () => {
       </div>
 
       <div className={styles.photosContainer}>
-        <img src={firstPhoto} alt="photo" className={styles.photoPlaceholder} />
-        <img
-          src={secondPhoto}
-          alt="photo"
-          className={styles.photoPlaceholder}
-        />
-        <img src={thirdPhoto} alt="photo" className={styles.photoPlaceholder} />
+        <div className={styles.photoWrapper}>
+          <img
+            src={firstPhoto}
+            alt="photo"
+            className={styles.photoPlaceholder}
+          />
+          <img src={imgDelete} alt="Delete" className={styles.deleteIcon} />
+        </div>
+
+        <div className={styles.photoWrapper}>
+          <img
+            src={secondPhoto}
+            alt="photo"
+            className={styles.photoPlaceholder}
+          />
+          <img src={imgDelete} alt="Delete" className={styles.deleteIcon} />
+        </div>
+
+        <div className={styles.photoWrapper}>
+          <img
+            src={thirdPhoto}
+            alt="photo"
+            className={styles.photoPlaceholder}
+          />
+          <img src={imgDelete} alt="Delete" className={styles.deleteIcon} />
+        </div>
       </div>
     </div>
   )

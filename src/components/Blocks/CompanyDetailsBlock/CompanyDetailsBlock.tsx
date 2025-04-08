@@ -4,6 +4,7 @@ import iconPencil from "../../../assets/icons/icon-pencil.svg"
 import iconCheck from "../../../assets/icons/icon-check.svg"
 import iconCross from "../../../assets/icons/icon-cross.svg"
 import { CustomSelectWithCheckboxes } from "./CustomSelectWithCheckboxes"
+import { ClassicCustomSelect } from "./ClassicCustomSelect"
 
 export const CompanyDetailsBlock = () => {
   const [isEditing, setIsEditing] = useState(false)
@@ -80,17 +81,15 @@ export const CompanyDetailsBlock = () => {
         <div className={styles.contentLine}>
           <div className={styles.first}>Business entity:</div>
           {isEditing ? (
-            <select
-              className={styles.editSelect}
-              value={businessEntity}
-              onChange={(e) => setBusinessEntity(e.target.value)}
-            >
-              <option value="SoleProprietorship">Sole Proprietorship</option>
-              <option value="Partnership">Partnership</option>
-              <option value="CorporLimitedLiabilityCompanyation">
-                Limited Liability Company
-              </option>
-            </select>
+            <ClassicCustomSelect
+              options={[
+                "Sole Proprietorship",
+                "Partnership",
+                "Limited Liability Company",
+              ]}
+              selectedOption={businessEntity}
+              onSelect={(value) => setBusinessEntity(value)}
+            />
           ) : (
             <div className={styles.second}>{businessEntity}</div>
           )}

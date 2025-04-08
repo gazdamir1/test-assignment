@@ -45,7 +45,12 @@
   border: 1px solid rgba(0, 0, 0, 0.2);
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    color: #6d4aff;
+  }
+
+  &:active {
+    color: #6d4aff;
+    border: 1px solid #6d4aff;
   }
 
   .buttonIcon {
@@ -73,7 +78,33 @@
   color: rgba(0, 0, 0, 0.4);
   font-size: 12px;
 
-  &:before {
-    content: "+ Add photo";
+  &:hover {
+    outline: 2px solid #6243e6;
+  }
+}
+
+.photoWrapper {
+  position: relative;
+  width: 144px;
+  height: 108px;
+}
+
+.deleteIcon {
+  padding: 6px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  background-color: #3b3b3b;
+  border-radius: 8px;
+  &:hover {
+    background-color: lighten(#3b3b3b, 20%);
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  &:active {
+    background-color: lighten(#3b3b3b, 30%);
+    color: rgba(255, 255, 255, 0.95);
   }
 }

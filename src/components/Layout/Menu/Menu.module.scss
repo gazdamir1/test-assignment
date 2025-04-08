@@ -30,10 +30,6 @@ button {
   cursor: pointer;
   padding: 8px;
   border-radius: 4px;
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.1);
-  }
 }
 
 .buttonsBlock {
@@ -45,18 +41,21 @@ button {
 }
 
 .iconButton {
-  width: 20px;
-  height: 20px;
-  padding: 0;
-  margin: 8px;
+  width: 36px;
+  height: 36px;
+
   background: transparent;
   border: none;
   cursor: pointer;
-  border-radius: 4px;
-  transition: background 0.2s;
+  border-radius: 8px;
+  box-sizing: border-box;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background-color: lighten(#3b3b3b, 10%);
+  }
+
+  &:active {
+    background-color: lighten(#3b3b3b, 20%);
   }
 
   img {

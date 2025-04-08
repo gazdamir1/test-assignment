@@ -53,7 +53,6 @@
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.05);
-    transform: translateX(2px);
   }
 
   .buttonIcon {
@@ -119,28 +118,18 @@
   height: 28px;
   color: #3b3b3b;
   border: rgba(0, 0, 0, 0.2) solid 1px;
+}
 
+.textIconButton,
+.saveButton,
+.cancelButton {
   &:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #6d4aff;
   }
 
   &:active {
-    transform: translateY(0);
-  }
-}
-
-.saveButton {
-  &:hover {
-    background-color: #3e8e41;
-    color: white;
-  }
-}
-
-.cancelButton {
-  &:hover {
-    background-color: #d32f2f;
-    color: white;
+    color: #6d4aff;
+    border: 1px solid #6d4aff;
   }
 }
 
@@ -155,10 +144,25 @@
   box-sizing: border-box;
   transition: all 0.3s ease;
 
+  &:hover {
+    border: rgba(0, 0, 0, 0.5) solid 1px;
+  }
+
   &:focus {
-    outline: none;
-    border-color: #4a90e2;
-    transform: scale(1.02);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-color: #35cdfd;
+    outline: 1px solid #35cdfd;
+  }
+}
+
+.textIconButton,
+.saveButton,
+.cancelButton {
+  &:hover {
+    color: #6d4aff;
+  }
+
+  &:active {
+    color: #6d4aff;
+    border: 1px solid #6d4aff;
   }
 }
